@@ -15,6 +15,8 @@ class TestHomePage(BaseClass):
 
         homepage.getName().send_keys(getData["firstName"])
 
+        # time.sleep(5)
+
         # self.driver.find_element_by_name("name").send_keys("ritesh")
 
         homepage.getEmail().send_keys(getData["lastName"])
@@ -35,6 +37,6 @@ class TestHomePage(BaseClass):
 
         self.driver.refresh()
 
-    @pytest.fixture(params=HomePageData.test_HomePage_data)
+    @pytest.fixture(params=HomePageData.getTestData())
     def getData(self, request):
         return request.param
